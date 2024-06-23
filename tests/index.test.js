@@ -1,7 +1,7 @@
-// integration spec
+
 
 const request = require('supertest')
-const app = require('../index') // Your Express app
+const app = require('../index') 
 
 describe('Todo App', () => {
   it('should create a new todo', async () => {

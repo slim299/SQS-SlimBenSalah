@@ -6,13 +6,13 @@ const xss = require('xss')
 const app = express()
 const port = 3000
 
-// Set up EJS as the view engine
+
 app.set('view engine', 'ejs')
 
-// Middleware
+
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// Database
+
 const db = new sqlite3.Database(':memory:')
 
 db.serialize(() => {
@@ -37,7 +37,7 @@ db.serialize(() => {
   )
 })
 
-// Routes
+
 app.get('/', (req, res) => {
   db.all('SELECT * FROM todos', (err, rows) => {
     if (err) {
